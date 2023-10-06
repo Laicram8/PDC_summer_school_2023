@@ -1,27 +1,25 @@
 
-Comment for PDC Summer School - Check out the Project_PDC_Summer_School.pdf where more detailed instruction for the final project is located
 
 Simplified simulation of high-energy particle storms
 
-EduHPC 2018: Peachy assignment
+2023 Ernst Nordstrom Cederholm, Lukas Bahner.
+Marcial Sanchis Agudo 
 
-(c) 2018 Arturo Gonzalez-Escribano, Eduardo Rodriguez-Gutiez
-Group Trasgo, Universidad de Valladolid (Spain)
+This report describes our work on the project of the PDC Summer School 2023. It is part of the course
+”FDD3260 High-performance Computing for Computational Scientists 5.0 credits” offered at KTH Royal
+Institute of Technology in Stockholm. The code in energy_storms.c has been parallelized using mpi, omp and cuda. 
 
 --------------------------------------------------------------
+How to run the code
+--------------------------------------------------------------
+Exampel run in bash:
 
-Read the handout and use the sequential code as reference to study.
-Use the other source files to parallelize with the proper programming model.
+$ make clean
+$ make all
+$ ./energy_storms_omp 20 test_files/test_05_a20_p4_w1
 
-Edit the first lines in the Makefile to set your preferred compilers and flags
-for both the sequential code and for each parallel programming model: 
-OpenMP, MPI, and CUDA.
 
 To see a description of the Makefile options execute:
 $ make help 
 
-Use the input files in the test_files directory for your first tests.
-Students are encouraged to manually write or automatically generate
-their own input files for more complete tests. See a description of
-the input files format in the handout.
-
+Use the input files in the test_files directory for your tests.
