@@ -222,7 +222,8 @@ int main(int argc, char *argv[]) {
 	}
 
         /* 4.3. Locate the maximum value in the layer, and its position */
-	#pragma omp parallel for default(none) shared(layer,layer_size,i, maximum, positions) 
+	
+	/* the loop bellow should not be parallellized since data race would occure writing to maximum[i] and positions[i]. */
         for( k=1; k<layer_size-1; k++ ) {
             /* Check it only if it is a local maximum */
             if ( layer[k] > layer[k-1] && layer[k] > layer[k+1] ) {
